@@ -1,5 +1,4 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom"; 
 import fetchProducts from "../utils/fetchProducts";
 
 const CategoryContainer = () => {
@@ -17,10 +16,11 @@ const CategoryContainer = () => {
       <h2>{categoryId.toUpperCase()}</h2>
       {items.map((item) => (
         <div key={item.id}>
-          <Link to={`/item/${item.id}`}>{item.name}</Link>
+          <Link to={`/item/${item.id}`}>{item.name}</Link> 
         </div>
       ))}
     </div>
   );
 };
-export default CategoryCont
+
+export default CategoryContainer;

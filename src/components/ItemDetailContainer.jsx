@@ -1,23 +1,28 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import fetchProductById from "../utils/fetchProducts";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
-  const { itemId } = useParams();
-  const [item, setItem] = useState(null);
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    fetchProductById(itemId).then(setItem);
-  }, [itemId]);
+    const db = getFirestore();
+    const productRef = doc(db, "productos", id);
 
-  if (!item) return <p>Cargando...</p>;
+    getDoc(productRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProduct({ id: snapshot.id, ...snapshot.data() });
+      }
+    });
+  }, [id]);
 
   return (
     <div>
-      <h2>{item.name}</h2>
-      <p>{item.description}</p>
-      <button>Agregar al carrito</button>
+      {product ? <ItemDetail product={product} /> : <p>Cargando...</p>}
     </div>
   );
 };
+
 export default ItemDetailContainer;
