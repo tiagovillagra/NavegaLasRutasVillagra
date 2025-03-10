@@ -10,7 +10,7 @@ const ItemDetail = ({ product }) => {
   };
 
   return (
-    <div style={{ textAlign: "center", padding: "20px" }}>
+    <div className="catalogo-container">
       <h2>{product.name}</h2>
       <img src={product.image} alt={product.name} style={{ width: "200px" }} />
       <p>{product.description}</p>
