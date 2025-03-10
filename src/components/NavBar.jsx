@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
+
 const NavBar = () => {
   return (
     <nav style={{ display: "flex", justifyContent: "space-between", padding: "10px", background: "#333", color: "white" }}>
