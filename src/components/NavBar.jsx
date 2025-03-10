@@ -4,17 +4,19 @@ import CartWidget from "./CartWidget";
 
 const NavBar = () => {
   return (
+    <>
+    <header>
     <nav>
       <h1>Ayzus</h1>
       <div>
-        <Link to="/">inicio</Link>
+        <Link to="/">Inicio</Link>
         <Link to="/category/remeras">Remeras</Link>
         <Link to="/category/buzos">Buzos</Link>
-        <Link to="/cart">
-          <CartWidget />
-        </Link>
+        <CartWidget /> {}
       </div>
     </nav>
+    </header>
+    </>
   );
 };
 
