@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
-import {  } from "../components/firbase/firebaseConfig";
+import {} from "../components/firbase/firebaseConfig"
 import { collection, addDoc } from "firebase/firestore";
 
 
