@@ -23,7 +23,7 @@ const products = [
     name: "Remera Oversize", 
     category: "remeras", 
     description: "Remera oversize con diseño exclusivo", 
-    image: "/images/remera-oversize.jpg" // Ruta local o URL externa
+    image: "/images/remera-over.jpg" // Ruta local o URL externa
   },
   { 
     id: 2, 
@@ -37,7 +37,7 @@ const products = [
     name: "Buzo Oversize", 
     category: "buzos", 
     description: "Buzo con capucha y estilo urbano", 
-    image: "/images/buzo-oversize.jpg" 
+    image: "/images/buzo-over.jpg" 
   },
 ];
 
